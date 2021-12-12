@@ -1,1 +1,3 @@
-yaes
+*.o
+*.out
+pe
