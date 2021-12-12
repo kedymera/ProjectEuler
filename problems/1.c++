@@ -1,9 +1,10 @@
 #include<iostream>
+#include "../common/math.h"
 
 int sumofmultiples(int a, int b, int N) {
 	// ASSUMES a AND b ARE COPRIME!
-	int tot = N/a + N/b; // how many mults of 3, + how many mults of 5
-	return tot - N/(a*b); // remove mults of both
+	// sum all mults of a, then of b, then remove mults of both.
+	return arithmeticsum(0, N, a) + arithmeticsum(0, N, b) - arithmeticsum(0, N, a*b);
 }
 
 int sumofmultiples_bad(int a, int b, int N) {
@@ -17,6 +18,6 @@ int sumofmultiples_bad(int a, int b, int N) {
 }
 
 int main() {
-	std::cout << "Problem 1\n---------------\nAnswer: " << sumofmultiples(3, 5, 1000) << "\n"; 
+	std::cout << "Problem 1\n---------------\nAnswer: " << sumofmultiples(3, 5, 999) << "\n"; 
 	return 0;
 }
