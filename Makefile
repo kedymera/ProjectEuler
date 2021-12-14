@@ -1,14 +1,28 @@
+SHELL=bash
 COMPILER=g++
 FLAGS=-O3 -Wall -Wextra
-EXEC=pe
 LINKFLAGS=
-OBJS=problems/1.o common/math.o
+COMMOBJS=common/math.o
+PROBCPPS=$(shell find problems/ -name "*.cpp")
+PROBNUMS=$(shell for P in $(PROBCPPS); do echo $${P:9:-4}; done)
+PROBOBJS=$(shell for P in $(PROBCPPS); do echo $${P:0:-3}o; done)
+OBJS=$(COMMOBJS) $(PROBOBJS)
 
-pe: $(OBJS)
-	$(COMPILER) $(FLAGS) -o $(EXEC) $(OBJS) $(LINKFLAGS)
+all: objs pe
+
+objs: $(OBJS)
+
+pe:
+	for P in $(PROBNUMS); do \
+		$(COMPILER) $(FLAGS) -o pe$$P $(COMMOBJS) problems/$$P.o $(LINKFLAGS);\
+	done
+
+%.o: %.cpp
+	$(COMPILER) $(FLAGS) -c -o $@ $<
 
 clean:
-	rm -rf *.o $(EXEC)
-
-%.o: %.c++
-	$(COMPILER) $(FLAGS) -c -o $@ $<
+	rm -rf common/*.o
+	rm -rf problems/*.o
+	for P in $(PROBNUMS); do \
+		rm -rf pe$$P;\
+	done

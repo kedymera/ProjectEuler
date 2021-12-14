@@ -1,5 +1,5 @@
 #include<iostream>
-#include "../common/math.h"
+#include "../common/math.hpp"
 
 int sumofmultiples(int a, int b, int N) {
 	// ASSUMES a AND b ARE COPRIME!
