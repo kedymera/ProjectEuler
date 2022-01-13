@@ -25,3 +25,8 @@ int inttodigits(int N, int *digits, int maxdigits) {
 	}
 	return numdigits;
 }
+
+int sumsquares(int N) {
+	// 1^2 + 2^2 + ... + N^2 == N*(N+1)*(2N+1)/6
+	return N*(N+1)*(2*N+1)/6;
+}

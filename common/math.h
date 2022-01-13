@@ -7,3 +7,6 @@ int arithmeticsum(int start, int end, int step);
 // calculates the base 10 digits of the number, storing them in array digits, and returns the actual number of digits
 // e.g. N=648912, digits of length 9 and maxdigits=9, sets digits to {2, 1, 9, 8, 4, 6} and returns 6.
 int inttodigits(int N, int *digits, int maxdigits);
+
+// sums the squares of all naturals from 1 to N
+int sumsquares(int N);
