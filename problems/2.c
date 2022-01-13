@@ -5,7 +5,7 @@
 //
 //By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-#include<iostream>
+#include<stdio.h>
 
 int evenfibonaccinumbers(int until) {
 	// fibonacci parity goes (starting from 1 2) like O E O O E O O E O O E O O E etc.
@@ -23,6 +23,6 @@ int evenfibonaccinumbers(int until) {
 }
 
 int main() {
-	std::cout << "Problem 2\n---------------\nAnswer: " << evenfibonaccinumbers(4000000) << "\n"; 
+	printf("Problem 2\n---------------\nAnswer: %d\n", evenfibonaccinumbers(4000000));
 	return 0;
 }

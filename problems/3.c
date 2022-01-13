@@ -3,7 +3,7 @@
 //
 //What is the largest prime factor of the number 600851475143 ?
 
-#include <iostream>
+#include <stdio.h>
 #include <math.h>
 
 int largestprimefactor(long N) {
@@ -22,6 +22,6 @@ int largestprimefactor(long N) {
 }
 
 int main() {
-	std::cout << "Problem 3\n---------------\nAnswer: " << largestprimefactor(600851475143) << "\n"; 
+	printf("Problem 3\n---------------\nAnswer: %d\n", largestprimefactor(600851475143));
 	return 0;
 }

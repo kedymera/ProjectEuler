@@ -3,8 +3,8 @@
 //
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
-#include<iostream>
-#include "../common/math.hpp"
+#include<stdio.h>
+#include "../common/math.h"
 
 int sumofmultiples(int a, int b, int N) {
 	// ASSUMES a AND b ARE COPRIME!
@@ -23,6 +23,6 @@ int sumofmultiples_bad(int a, int b, int N) {
 }
 
 int main() {
-	std::cout << "Problem 1\n---------------\nAnswer: " << sumofmultiples(3, 5, 999) << "\n"; 
+	printf("Problem 1\n---------------\nAnswer: %d\n", sumofmultiples(3, 5, 999));
 	return 0;
 }
