@@ -1,6 +1,6 @@
 SHELL=bash
 CC=gcc
-FLAGS=-O3 -Wall -Wextra
+FLAGS=-Wall -Wextra -g
 LINKFLAGS=-lm
 COMMOBJS=common/math.o
 PROBSRCS=$(shell find problems/ -name "*.c")
