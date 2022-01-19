@@ -1,5 +1,6 @@
 #include<stdbool.h>
 #include<stdio.h>
+#include<math.h>
 
 #include "./math.h"
 
@@ -29,4 +30,22 @@ int inttodigits(int N, int *digits, int maxdigits) {
 int sumsquares(int N) {
 	// 1^2 + 2^2 + ... + N^2 == N*(N+1)*(2N+1)/6
 	return N*(N+1)*(2*N+1)/6;
+}
+
+bool isprime(int i) {
+	int d;
+	for (d = 2; d <= sqrt(i); ++d) {
+		if (i % d == 0) return false;
+	}
+	return true;
+}
+
+int nthprime_slow(int n) {
+	int i = 1;
+	while (n > 0) {
+		++i;
+		if (isprime(i))
+			--n;
+	}
+	return i;
 }

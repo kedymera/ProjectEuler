@@ -10,3 +10,6 @@ int inttodigits(int N, int *digits, int maxdigits);
 
 // sums the squares of all naturals from 1 to N
 int sumsquares(int N);
+
+// returns the nth prime (1: 2, 2: 3, 3: 5, 4: 7, 5: 11, etc.)
+int nthprime_slow(int n);
